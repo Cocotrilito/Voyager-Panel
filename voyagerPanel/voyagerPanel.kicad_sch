@@ -4816,7 +4816,7 @@
 	(text_box "BOOT\n"
 		(exclude_from_sim no)
 		(at 179.07 69.85 0)
-		(size 33.02 38.1)
+		(size 33.02 21.59)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -5333,6 +5333,16 @@
 	)
 	(wire
 		(pts
+			(xy 190.5 76.2) (xy 195.58 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ae79fe8-fae8-4eac-9bfd-4520b2f0275a")
+	)
+	(wire
+		(pts
 			(xy 252.73 76.2) (xy 262.89 76.2)
 		)
 		(stroke
@@ -5500,16 +5510,6 @@
 			(type default)
 		)
 		(uuid "388eaa1d-83ea-4156-b449-caada5434e2e")
-	)
-	(wire
-		(pts
-			(xy 186.69 85.09) (xy 182.88 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "39669e7d-1862-46c5-b78b-36f7392df05c")
 	)
 	(wire
 		(pts
@@ -5690,16 +5690,6 @@
 			(type default)
 		)
 		(uuid "4cc72103-91aa-49d6-b68c-e3d9ff5e277b")
-	)
-	(wire
-		(pts
-			(xy 182.88 85.09) (xy 182.88 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4e704ce3-eafa-4eb5-822f-0b915e966358")
 	)
 	(wire
 		(pts
@@ -6163,6 +6153,16 @@
 	)
 	(wire
 		(pts
+			(xy 185.42 81.28) (xy 185.42 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0b20278-29d6-4f1f-aa08-2a2f01d4def2")
+	)
+	(wire
+		(pts
 			(xy 125.73 134.62) (xy 125.73 133.35)
 		)
 		(stroke
@@ -6333,16 +6333,6 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 80.01) (xy 199.39 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c320aa46-aa6b-44c0-86e0-0b570a8eb630")
-	)
-	(wire
-		(pts
 			(xy 31.75 90.17) (xy 39.37 90.17)
 		)
 		(stroke
@@ -6450,16 +6440,6 @@
 			(type default)
 		)
 		(uuid "d38030f2-3974-491b-ae0d-1fed46ce1df6")
-	)
-	(wire
-		(pts
-			(xy 191.77 80.01) (xy 199.39 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d7268d6a-b1c1-4964-b678-b4fcb9f52214")
 	)
 	(wire
 		(pts
@@ -7305,28 +7285,6 @@
 			)
 		)
 	)
-	(global_label "PROG_IO0"
-		(shape output)
-		(at 199.39 86.36 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c5525112-12b6-49c6-ad15-23620888dd9d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 211.6281 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "I2C_SDA"
 		(shape bidirectional)
 		(at 121.92 166.37 0)
@@ -7362,6 +7320,28 @@
 		(uuid "d5dcf5fa-75ce-437c-9643-9ee42833ecae")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 154.9013 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PROG_IO0"
+		(shape input)
+		(at 195.58 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d8e9bf85-8152-4892-9a93-bf43f7115a9f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 207.8181 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7736,7 +7716,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "10e07432-c6e8-44c0-9f25-842422375f8f")
-		(property "Reference" "I2CSCL1"
+		(property "Reference" "R14"
 			(at 160.02 151.13 90)
 			(effects
 				(font
@@ -7788,7 +7768,7 @@
 		(instances
 			(project ""
 				(path "/900137c4-bd1a-4df5-8116-d18ee50480ac"
-					(reference "I2CSCL1")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -7947,72 +7927,6 @@
 			(project ""
 				(path "/900137c4-bd1a-4df5-8116-d18ee50480ac"
 					(reference "U4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 182.88 82.55 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1e4b0411-86ff-4ebf-89cc-e00723bf12e4")
-		(property "Reference" "#PWR021"
-			(at 182.88 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 182.88 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 182.88 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 182.88 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 182.88 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1d73ae70-6d2f-456f-b765-34ee7f3b4eb4")
-		)
-		(instances
-			(project ""
-				(path "/900137c4-bd1a-4df5-8116-d18ee50480ac"
-					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -8292,7 +8206,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2b3630e7-a813-4a27-b5f6-a3948a0d9d83")
-		(property "Reference" "I2CSDA1"
+		(property "Reference" "R15"
 			(at 160.02 160.02 90)
 			(effects
 				(font
@@ -8344,7 +8258,7 @@
 		(instances
 			(project "voyagerPanel"
 				(path "/900137c4-bd1a-4df5-8116-d18ee50480ac"
-					(reference "I2CSDA1")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -11913,6 +11827,75 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_Push_45deg")
+		(at 187.96 78.74 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d3a1271d-bf4f-4b9a-b6ad-93a08897cda6")
+		(property "Reference" "SW2"
+			(at 191.77 77.4699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SW_Push_45deg"
+			(at 191.008 78.994 90)
+			(effects
+				(font
+					(size 0.508 0.508)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_TL3342"
+			(at 187.96 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 187.96 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, normally open, two pins, 45° tilted"
+			(at 187.96 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a1feeb24-f48b-4084-9c38-caebf9342cad")
+		)
+		(pin "2"
+			(uuid "dbe8a441-058e-44ba-b7a2-9cdfd2f047ea")
+		)
+		(instances
+			(project "voyagerPanel"
+				(path "/900137c4-bd1a-4df5-8116-d18ee50480ac"
+					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 128.27 160.02 0)
 		(unit 1)
@@ -12790,75 +12773,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push_45deg")
-		(at 189.23 82.55 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ee8fdf7e-5b17-46f7-acb1-5092d0781b02")
-		(property "Reference" "SW2"
-			(at 193.04 81.2799 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "SW_Push_45deg"
-			(at 192.278 82.804 90)
-			(effects
-				(font
-					(size 0.508 0.508)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPST_TL3342"
-			(at 189.23 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 189.23 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, normally open, two pins, 45° tilted"
-			(at 189.23 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d52fbf23-1887-4a72-adbb-010ee64f9097")
-		)
-		(pin "2"
-			(uuid "7adbc7da-5169-4284-9346-73741c83f67a")
-		)
-		(instances
-			(project "voyagerPanel"
-				(path "/900137c4-bd1a-4df5-8116-d18ee50480ac"
-					(reference "SW2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 245.11 157.48 0)
 		(unit 1)
@@ -13053,6 +12967,72 @@
 			(project "voyagerPanel"
 				(path "/900137c4-bd1a-4df5-8116-d18ee50480ac"
 					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 185.42 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f7d34394-24fb-4d59-af1d-3d42334c5dc6")
+		(property "Reference" "#PWR021"
+			(at 185.42 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 185.42 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 185.42 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 185.42 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7981ea6d-e266-4938-85fa-58f4f6254cdc")
+		)
+		(instances
+			(project "voyagerPanel"
+				(path "/900137c4-bd1a-4df5-8116-d18ee50480ac"
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
