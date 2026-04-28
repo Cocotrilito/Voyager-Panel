@@ -8,10 +8,13 @@ This project started form the *dream* of always wanting to have a big countdown 
 ![Schematic](<images/Final Schematic.png>)
 ## PCB - DIFERENT VERSIONS
 ![PCB](<images/full PCB.png>)
+![b.cu](<images/backBCU.png>)
+![F.cu](<images/frontFCU.png>)
 ## RENDER!!
 ![RenderFusion](cad/VoyagerPanel.png)
 ![FrontPCB](<images/PCB FRONT.png>)
 ![BackPCB](<images/PCB BACK.png>)
+
 
 ## BOM
 | Name | Purpose | Qty | Cost (USD) | Distributor |
