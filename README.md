@@ -7,7 +7,7 @@ This project started form the *dream* of always wanting to have a big countdown 
 ## Schematic Overview
 ![Schematic](<images/Final Schematic.png>)
 ## PCB - DIFERENT VERSIONS
-![PCB](images/full PCB.png)
+![PCB](<images/full PCB.png>)
 ## RENDER!!
 ![RenderFusion](cad/VoyagerPanel.png)
 ![FrontPCB](<images/PCB FRONT.png>)
