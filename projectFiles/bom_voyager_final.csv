@@ -1,0 +1,30 @@
+Name,Purpose,Quantity,Unit Cost (USD),Total Cost (USD),Distributor,Link
+ESP32-S3-MINI-1,Main microcontroller with WiFi and USB native,1,$8.50,$8.50,AliExpress,https://www.aliexpress.com/item/ESP32-S3-MINI-1.html
+Waveshare 2.9inch e-Paper Module,Main e-ink display 296x128px,1,$17.00,$17.00,AliExpress,https://www.waveshare.com/2.9inch-e-paper-module.htm
+BME280 Breakout Module,Temperature/Humidity/Pressure sensor,1,$5.15,$5.15,AliExpress,https://www.aliexpress.us/item/3256805961500122.html
+LiPo Battery 1000mAh 3.7V,Portable power source - bought locally,1,$5.00,$5.00,Local Ecuador,N/A
+USB-C Receptacle 16P,Power input and native USB programming,1,$0.50,$0.50,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C165948.html
+JST PH 2mm 2-Pin Connector,Battery connector,1,$0.10,$0.10,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C295747.html
+Pin Header 1x08 2.54mm,E-ink display connector,1,$0.05,$0.05,Local/AliExpress,N/A
+Pin Header 1x04 2.54mm,BME280 module connector,1,$0.05,$0.05,Local/AliExpress,N/A
+TP4056-42-ESOP8,LiPo battery charger IC up to 550mA,1,$0.15,$0.15,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C16581.html
+MCP1700-3302 SOT-89,3.3V LDO regulator 0.2V dropout,1,$0.45,$0.45,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C5446.html
+SP0503BAHTG SOT-363,TVS ESD protection diode for USB,1,$0.20,$0.20,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C558442.html
+SS14 SMA,Schottky diode reverse current protection,1,$0.05,$0.05,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C2480.html
+Polyfuse 500mA 1206,Resettable overcurrent fuse,1,$0.10,$0.10,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C69688.html
+SW_SPST_TL3342 x4,Tactile buttons - Reset/Boot/Next/Select,4,$0.05,$0.20,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C2886894.html
+LED 0805 Red,Battery charging indicator (CHRG),1,$0.02,$0.02,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C84256.html
+LED 0805 Blue,Standby indicator (STDBY),1,$0.02,$0.02,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C72041.html
+LED 0805 Green,System status indicator,1,$0.02,$0.02,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C72043.html
+Resistor 1k 0805 x3,LED current limiting resistors,3,$0.01,$0.03,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C17513.html
+Resistor 2.2k 0805,TP4056 charge current set (~550mA),1,$0.01,$0.01,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C17520.html
+Resistor 4.7k 0805 x2,I2C SDA/SCL pull-up resistors,2,$0.01,$0.02,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C17673.html
+Resistor 5.1k 0805 x2,USB-C CC1/CC2 pull-down resistors,2,$0.01,$0.02,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C23186.html
+Resistor 10k 0805 x5,Pull-ups for EN/BOOT/UI buttons,5,$0.01,$0.05,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C17414.html
+Resistor 27R 0805 x2,USB D+/D- series termination resistors,2,$0.01,$0.02,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C17719.html
+Capacitor 100nF 0805 x5,High frequency decoupling capacitors,5,$0.01,$0.05,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C49678.html
+Capacitor 1uF 0805,EN pin reset debounce capacitor,1,$0.02,$0.02,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C28323.html
+Capacitor 10uF 0805 x5,Bulk decoupling capacitors,5,$0.03,$0.15,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C15850.html
+Capacitor 22uF 0805,ESP32 main power bulk decoupling,1,$0.05,$0.05,JLCPCB/LCSC,https://www.lcsc.com/product-detail/C45783.html
+PCB Manufacturing x5,Custom 2-layer PCB with SMT assembly,1,$47.90,$47.90,JLCPCB,https://jlcpcb.com
+TOTAL,,,,~$85.42,,
