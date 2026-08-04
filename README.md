@@ -1,22 +1,152 @@
-# Voyager-Panel
+<div align="center">
+
+# ⟡ VOYAGER PANEL ⟡
+
+### An E-Ink travel dashboard
+
+<img src="images/VoyagerPanel.gif" width="100%" alt="Voyager Panel in motion">
+
+<img src="images/finalbuild.jpeg" width="100%" alt="Final build">
+
+`ESP32-S3` · `296×128 E-Paper` · `Battery Powered` · `Wi-Fi` · `Low Power`
+
+</div>
+
+---
+
 An E-Ink travel dashboard. with an ESP32-S3 Showing weather, hackclub countdowns, and travel info for hackactons. this dashboard has Low-Power consumption, Wi-Fi connected, battery-operated!!!!
 
-## The reason behind this project
-This project started form the *dream* of always wanting to have a big countdown telling you the Narrow door for a better future is closing, yeah crazy right?, hahaha well actually this project started in the supermarket of my local city, I was shopping and noticed an E-Ink display, I thought *I have seen this before* and it was when I was searching my first project I saw something called E-Ink dashboard, and was cool but I thought Im too newbie for this, so I challenged myself to improve my PCB designer skills and I think I did a really cool project, im really proud of it tbh, well but in the end the actual big reason is to truly have a giant countdown telling you stasis is over in X days or telling you your youth days are over in X days I love presure >:D
+---
 
-## Schematic Overview
+## ⟡ The reason behind this project
+
+This project started from the *dream* of always wanting to have a big countdown telling you the Narrow door for a better future is closing, yeah crazy right?, hahaha well actually this project started in the supermarket of my local city, I was shopping and noticed an E-Ink display, I thought *I have seen this before* and it was when I was searching my first project I saw something called E-Ink dashboard, and was cool but I thought Im too newbie for this, so I challenged myself to improve my PCB designer skills and I think I did a really cool project, im really proud of it tbh, well but in the end the actual big reason is to truly have a giant countdown telling you stasis is over in X days or telling you your youth days are over in X days I love presure >:D
+
+---
+
+## ⟡ Schematic Overview
+
+<div align="center">
+
 ![Schematic](<images/Final Schematic.png>)
-## PCB - DIFERENT VERSIONS
+
+</div>
+
+---
+
+## ⟡ PCB — DIFFERENT VERSIONS
+
+<div align="center">
+
 ![PCB](<images/full PCB.png>)
-![b.cu](<images/backBCU.png>)
-![F.cu](<images/frontFCU.png>)
-## RENDER!!
+
+</div>
+
+<table>
+<tr>
+<td width="50%"><img src="images/backBCU.png" width="100%" alt="B.Cu layer"></td>
+<td width="50%"><img src="images/frontFCU.png" width="100%" alt="F.Cu layer"></td>
+</tr>
+<tr>
+<td align="center"><b>Back copper</b></td>
+<td align="center"><b>Front copper</b></td>
+</tr>
+</table>
+
+---
+
+## ⟡ RENDER!!
+
+<div align="center">
+
 ![RenderFusion](cad/VoyagerPanel.png)
-![FrontPCB](<images/PCB FRONT.png>)
-![BackPCB](<images/PCB BACK.png>)
 
+</div>
 
-## BOM
+<table>
+<tr>
+<td width="50%"><img src="images/PCB FRONT.png" width="100%" alt="PCB front"></td>
+<td width="50%"><img src="images/PCB BACK.png" width="100%" alt="PCB back"></td>
+</tr>
+<tr>
+<td align="center"><b>Front</b></td>
+<td align="center"><b>Back</b></td>
+</tr>
+</table>
+
+---
+
+## ⟡ Hardware at a glance
+
+| | |
+|---|---|
+| **MCU** | ESP32-S3-MINI-1 — Wi-Fi, BLE, native USB |
+| **Display** | Waveshare 2.9" e-Paper, 296×128, SSD1680 controller |
+| **Sensor** | BMP280 over I2C — temperature, pressure, derived altitude |
+| **Power** | 1000 mAh LiPo, TP4056 charger, MCP1700 LDO |
+| **Protection** | TVS ESD array, Schottky reverse-current diode, 500 mA polyfuse |
+| **Programming** | Native USB-C, no external UART bridge |
+
+---
+
+## ⟡ Firmware
+
+Built with **PlatformIO** on the Arduino framework.
+
+```
+firmware/VoyagerPanelFirmware/
+├── platformio.ini
+└── src/
+    ├── main.cpp
+    └── images.h
+```
+
+Because the board uses the ESP32-S3's native USB and carries no USB-UART bridge,
+`Serial` has to be routed to the USB CDC peripheral. Without these flags nothing
+reaches the host:
+
+```ini
+build_flags =
+    -D ARDUINO_USB_MODE=1
+    -D ARDUINO_USB_CDC_ON_BOOT=1
+```
+
+The sensor and the display initialise **independently**, so a failure in one does not
+take down the other. The dashboard degrades gracefully instead of hanging.
+
+### Live telemetry
+
+```
+========== VOYAGER SENSOR ==========
+  Temperature : 29.29 C
+  Pressure    : 751.36 hPa
+  Altitude    : 2452.2 m
+====================================
+```
+
+---
+
+## ⟡ Debugging log
+
+The display refused to render, and tracking down why turned into the most interesting
+part of this build — a full diagnosis of a hardware fault carried out **without a
+multimeter**, using the microcontroller itself as the measuring instrument.
+
+Short version: the SSD1680 was running on **phantom power**, leaking current through
+its own ESD protection diodes. Enough to acknowledge a reset, not enough to execute a
+single SPI command.
+
+The full write-up, including the software continuity matrix used to prove it, lives in
+**[DEBUGGING.md](DEBUGGING.md)**.
+
+A second find along the way: the module sold as a BME280 is actually a **BMP280**. Its
+chip ID register returns `0x58` instead of `0x60`, and it has no humidity channel. The
+firmware reads that register and picks the right driver rather than trusting the label.
+
+---
+
+## ⟡ BOM
+
 | Name | Purpose | Qty | Cost (USD) | Distributor |
 |------|---------|-----|-----------|-------------|
 | ESP32-S3-MINI-1 | Main microcontroller with WiFi and USB native | 1 | $8.50 | AliExpress |
@@ -49,9 +179,37 @@ This project started form the *dream* of always wanting to have a big countdown 
 | PCB + SMT Assembly | 2-layer PCB with PCBA | 1 | $47.90 | JLCPCB |
 | **TOTAL** | | | **$85.42** | |
 
-## Final notes!
+---
+
+## ⟡ Repository layout
+
+```
+├── cad/                          Fusion 360 enclosure + renders
+├── docs/references/              Datasheets and reference material
+├── firmware/
+│   ├── VoyagerPanelFirmware/     PlatformIO project
+│   └── diagnostics/              Hardware bring-up test sketches
+├── images/                       Schematic, PCB, and build photos
+├── projectFiles/
+├── voyagerPanel/                 KiCad project
+├── DEBUGGING.md
+└── README.md
+```
+
+---
+
+## ⟡ Final notes!
+
 Thanks for reading! made possible with http://stasis.hackclub.com/
 
-## me
+---
+
+<div align="center">
+
+## ⟡ me
+
 *By cocotrilo*
+
 **made with luv (THIS ONE was with a lot of love, EXCEPT FOR THE BOM PLEASE DONT USE EVER ALIEXPRESS) Nk but luv from EC <3**
+
+</div>
