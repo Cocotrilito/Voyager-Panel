@@ -1,0 +1,6 @@
+
+.history/
+.pio/
+.vscode/
+*.kicad_prl
+
